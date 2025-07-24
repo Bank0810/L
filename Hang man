@@ -1,0 +1,35 @@
+word = "banana"
+guessed = []
+hearts = 6
+
+while True:
+    show = ""
+    correct = True
+    for letter in word:
+        if letter in guessed:
+            show += letter + " "
+        else:
+            show += "_ "
+            correct = False
+    print("\nคำ:", show.strip())
+
+    if correct:
+        print("คุณชนะ!")
+        break
+
+    if hearts == 0:
+        print("คุณแพ้! คำคือ:", word)
+        break
+
+    guess = input("เดาตัวอักษร: ").lower()
+    if guess in guessed:
+        print("คุณเดาอักษรนี้ไปแล้ว")
+        continue
+
+    guessed.append(guess)
+
+    if guess in word:
+        print("ถูกต้อง!")
+    else:
+        hearts -= 1
+        print("ผิด! หัวใจเหลือ:", hearts)
