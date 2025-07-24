@@ -1,0 +1,29 @@
+
+print()
+print("ข้อ 3: ลบสัตว์ที่ขึ้นต้นด้วย f, m, q:")
+
+i = 0
+while i < len(animals):
+    if animals[i][0] == "f" or animals[i][0] == "m" or animals[i][0] == "q":
+        animals.pop(i)
+    else:
+        i += 1
+
+print("รายชื่อสัตว์หลังลบ:")
+for animal in animals:
+    print("-", animal)
+
+print()
+print("ข้อ 4: แสดงชื่อสัตว์ที่มีตัว 'o':")
+
+count = 0
+for animal in animals:
+    has_o = False
+    for ch in animal:
+        if ch == "o":
+            has_o = True
+    if has_o:
+        print("-", animal)
+        count += 1
+
+print("จำนวนสัตว์ที่มีตัว o คือ:", count)
